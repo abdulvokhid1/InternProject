@@ -36,6 +36,9 @@ const NavbarBody = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
+  .active {
+    color: red;
+  }
 `;
 const Body = styled.div`
   display: flex;
