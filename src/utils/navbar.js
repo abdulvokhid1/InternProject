@@ -29,3 +29,4 @@ export const navbar = [
     private: false,
   },
 ];
+export default navbar;
