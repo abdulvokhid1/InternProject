@@ -1,6 +1,13 @@
 import React from "react";
 import navbar from "../../utils/navbar.js";
-import { Body, Container, NavbarBody, NavbarWrapper, Wrapper } from "./style";
+import {
+  Body,
+  Container,
+  NavbarBody,
+  NavbarWrapper,
+  Wrapper,
+  LinkNav,
+} from "./style";
 import { Outlet, NavLink } from "react-router-dom";
 export const Navbar = () => {
   return (
@@ -10,7 +17,7 @@ export const Navbar = () => {
           <span>Logo</span>
           <NavbarBody>
             {navbar.map((value) => {
-              return <NavLink>{value.title}</NavLink>;
+              return <LinkNav>{value.title}</LinkNav>;
             })}
           </NavbarBody>
           <span>Button</span>

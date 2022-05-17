@@ -1,12 +1,12 @@
 import React from "react";
-import { Router } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { Wrapper } from "./style";
 
 export const Root = () => {
   return (
-    <div>
+    <Wrapper>
       <Navbar />
-    </div>
+    </Wrapper>
   );
 };
 export default Root;

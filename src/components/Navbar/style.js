@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { NavLink } from "react-router-dom";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,4 +44,9 @@ const Body = styled.div`
   display: flex;
   width: 100%;
 `;
-export { Wrapper, Container, Body, NavbarWrapper, NavbarBody };
+const LinkNav = styled(NavLink)`
+  .active {
+    color: red;
+  }
+`;
+export { LinkNav, Wrapper, Container, Body, NavbarWrapper, NavbarBody };
