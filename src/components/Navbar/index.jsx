@@ -1,14 +1,7 @@
 import React from "react";
-import navbar from "../../utils/navbar.js";
-import {
-  Body,
-  Container,
-  NavbarBody,
-  NavbarWrapper,
-  Wrapper,
-  LinkNav,
-} from "./style";
-import { Outlet, NavLink } from "react-router-dom";
+import navbar from "../../utils/navbar";
+import { Body, Container, NavbarBody, NavbarWrapper, Wrapper } from "./style";
+import { NavLink, Outlet } from "react-router-dom";
 export const Navbar = () => {
   return (
     <Wrapper>
@@ -16,8 +9,8 @@ export const Navbar = () => {
         <NavbarWrapper>
           <span>Logo</span>
           <NavbarBody>
-            {navbar.map((value) => {
-              return <LinkNav>{value.title}</LinkNav>;
+            {navbar.map(({ title, id, path }) => {
+              return <NavLink key={id}>{title}</NavLink>;
             })}
           </NavbarBody>
           <span>Button</span>
