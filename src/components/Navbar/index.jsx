@@ -10,7 +10,11 @@ export const Navbar = () => {
           <span>Logo</span>
           <NavbarBody>
             {navbar.map(({ title, id, path }) => {
-              return <NavLink key={id}>{title}</NavLink>;
+              return (
+                <NavLink key={id} to={path}>
+                  {title}
+                </NavLink>
+              );
             })}
           </NavbarBody>
           <span>Button</span>

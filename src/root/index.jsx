@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Wrapper } from "./style";
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 
 export const Root = () => {
   return (
-    <Wrapper>
-      <h1>I hate Errors ㅅㅂ</h1>
-      <Navbar />
-    </Wrapper>
+    <Router>
+      <Wrapper>
+        <Navbar />
+      </Wrapper>
+    </Router>
   );
 };
 export default Root;
