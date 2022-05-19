@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { ReactComponent as logo } from "../../assets/icons/logo.svg";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,6 +31,7 @@ const NavbarWrapper = styled.div`
   line-height: 24px;
   width: 100%;
   color: #ffffff;
+  align-items: center;
 `;
 const NavbarBody = styled.div`
   display: flex;
@@ -36,12 +40,41 @@ const NavbarBody = styled.div`
   justify-content: center;
   color: white;
   .active {
-    color: blue;
+    color: #00fff5;
   }
 `;
 const Body = styled.div`
   display: flex;
   width: 100%;
 `;
-
-export { Wrapper, Container, Body, NavbarWrapper, NavbarBody };
+const Link = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+  margin: 0 32px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+`;
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
+const Logo_Icon = styled(logo)``;
+const Logo_Title = styled("div")`
+  margin-left: 11px;
+  font-size: 20px;
+  font-weight: 500px;
+`;
+export {
+  Logo_Icon,
+  Logo_Title,
+  Logo,
+  Wrapper,
+  Container,
+  Body,
+  NavbarWrapper,
+  NavbarBody,
+  Link,
+};
