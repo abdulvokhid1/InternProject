@@ -36,7 +36,7 @@ const NavbarBody = styled.div`
   justify-content: center;
   color: white;
   .active {
-    color: red;
+    color: blue;
   }
 `;
 const Body = styled.div`
