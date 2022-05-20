@@ -13,7 +13,7 @@ export const Root = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to={"/home"} />} />
+        <Route path="/" e lement={<Navigate to={"/home"} />} />
         <Route element={<Navbar />}>
           {navbar.map(({ id, path, Element }) => {
             return <Route key={id} path={path} element={Element} />;
