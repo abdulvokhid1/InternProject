@@ -1,7 +1,6 @@
 import React from "react";
 import navbar from "../../utils/navbar";
 import {
-  Body,
   Container,
   Link,
   Logo,
@@ -37,9 +36,7 @@ export const Navbar = () => {
           </Button>
         </NavbarWrapper>
       </Container>
-      <Body>
-        <Outlet />
-      </Body>
+      <Outlet />
     </Wrapper>
   );
 };

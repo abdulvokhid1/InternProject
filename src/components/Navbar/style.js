@@ -73,7 +73,6 @@ export {
   Logo,
   Wrapper,
   Container,
-  Body,
   NavbarWrapper,
   NavbarBody,
   Link,
