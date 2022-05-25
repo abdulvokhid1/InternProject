@@ -14,11 +14,11 @@ import nouser from "../../assets/imgs/nouser.png";
 export const Card = ({ info, mr }) => {
   return (
     <Container mr={mr}>
+      <Img src={info?.img || nobackground} />
       <InfoWrapper>
         <User>
           <User.Img src={info?.user?.img || nouser} />
         </User>
-        <Img src={info?.img || nobackground} />
         <div className="subtitle">New Apartment Nice Wiew</div>
         <div className="descripton">Quincy St, Brooklyn, NY, USA</div>
         <Info>

@@ -79,7 +79,7 @@ const User = styled.div`
   align-items: center;
   width: 40px;
   height: 40px;
-  top: 220px;
+  top: -23px;
   right: 20px;
   /* margin-left: 240px; */
   border-radius: 70%;
