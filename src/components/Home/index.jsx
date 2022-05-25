@@ -2,13 +2,13 @@ import React from "react";
 import Filter from "../Filter";
 import { Container } from "./style";
 import Carousel from "./Corousel";
-import Card from "../Card";
+import Recommended from "../Recommended";
 export const Home = () => {
   return (
     <Container>
       <Filter />
       <Carousel />
-      <Card />
+      <Recommended />
     </Container>
   );
 };
