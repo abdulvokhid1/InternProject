@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   max-width: 380px;
   min-width: 280px;
+  flex-grow: 10;
   flex-direction: column;
   height: 430px;
   background: #ffffff;

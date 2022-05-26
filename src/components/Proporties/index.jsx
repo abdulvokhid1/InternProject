@@ -2,9 +2,23 @@ import React, { useState } from "react";
 import { Container, Total, Wrapper } from "./style";
 import Filter from "../Filter";
 import Card from "../Card";
+import { useQuery } from "react-query";
 
+const { REACT_APP_BASE_URL: url } = process.env;
 export const Proporties = () => {
   const [data, setData] = useState([]);
+  useQuery(
+    "get data",
+    () => {
+      return fetch(`${url}/v1/houses/list`).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        setData(res?.dataList[0]);
+      },
+    }
+  );
+  console.log(data, "res");
   return (
     <Container>
       <Filter />
@@ -14,11 +28,9 @@ export const Proporties = () => {
       </div>
       <Total className="description">{data.length}Total</Total>
       <Wrapper>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data.map((value) => {
+          return <Card key={value.id} info={value} />;
+        })}
       </Wrapper>
     </Container>
   );
