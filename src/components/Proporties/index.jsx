@@ -3,14 +3,17 @@ import { Container, Total, Wrapper } from "./style";
 import Filter from "../Filter";
 import Card from "../Card";
 import { useQuery } from "react-query";
+import { useLocation } from "react-router-dom";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 export const Proporties = () => {
+  // console.log(location, "loc");
   const [data, setData] = useState([]);
+  const { search } = useLocation();
   useQuery(
-    "get data",
+    ["get data", search],
     () => {
-      return fetch(`${url}/v1/houses/list`).then((res) => res.json());
+      return fetch(`${url}/v1/houses/list${search}`).then((res) => res.json());
     },
     {
       onSuccess: (res) => {

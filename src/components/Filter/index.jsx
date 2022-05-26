@@ -3,16 +3,26 @@ import { Container, Wrapper, Icon, Advanced, Section } from "./style";
 import { Popover } from "antd";
 import { Button } from "../Generic/Button";
 import { Input } from "../Generic/Input";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const onChange = ({ target }) => {
+    const { value, name } = target;
+    console.log(target, name);
+    navigate(`${pathname}?${name}=${value}`);
+  };
+
   const advancedSearch = (
     <Advanced>
       <Advanced.Title>Address </Advanced.Title>
       <Section>
-        <Input mr={20} placeholder={"Country"} />
-        <Input mr={20} placeholder={"Region"} />
-        <Input mr={20} placeholder={"City"} />
-        <Input mr={20} placeholder={"Zip code"} />
+        <Input placeholder={"Country"} />
+        <Input placeholder={"Region"} />
+        <Input onChange={onChange} name="city" placeholder={"City"} />
+        <Input placeholder={"Zip code"} />
       </Section>
       <Advanced.Title>Address info</Advanced.Title>
       <Section>
@@ -26,10 +36,10 @@ export const Home = () => {
         <Input placeholder={"Max price"} />
       </Section>
       <Section>
-        <Button width={"131px"} ml={20} type={"secondary"}>
+        <Button width={"131px"} type={"secondary"}>
           Cancel
         </Button>
-        <Button width={"131px"} ml={20} type={"primary"}>
+        <Button width={"131px"} type={"primary"}>
           Search
         </Button>
       </Section>

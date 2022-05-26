@@ -7,6 +7,7 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   margin-top: 10px 0;
+  padding: 0 130px;
 `;
 const Wrapper = styled.div`
   width: 1440px;
@@ -44,6 +45,7 @@ const Section = styled.div`
   display: flex;
   margin-bottom: 20px;
   justify-content: flex-end;
+  gap: 20px;
 `;
 
 export { Container, Wrapper, Icon, Advanced, Section };
