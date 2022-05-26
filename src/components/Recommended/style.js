@@ -11,11 +11,16 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-top: 32px;
   position: relative;
 `;
 const Carousel = styled.div`
   display: flex;
   width: 1440px;
+  .alice-carousel__prev-btn,
+  .alice-carousel__next-btn {
+    display: none;
+  }
 `;
 const ArrowLeft = styled(arrowleft)`
   position: absolute;
