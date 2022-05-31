@@ -21,7 +21,7 @@ export const Proporties = () => {
       },
     }
   );
-  console.log(data, "res");
+  // console.log(data, "res");
   return (
     <Container>
       <Filter />
