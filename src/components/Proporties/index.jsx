@@ -4,12 +4,14 @@ import Filter from "../Filter";
 import Card from "../Card";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
-
+import useSearch from "../../hooks/useSearch";
 const { REACT_APP_BASE_URL: url } = process.env;
+
 export const Proporties = () => {
   // console.log(location, "loc");
   const [data, setData] = useState([]);
   const { search } = useLocation();
+  const query = useSearch();
   useQuery(
     ["get data", search],
     () => {
@@ -17,7 +19,7 @@ export const Proporties = () => {
     },
     {
       onSuccess: (res) => {
-        setData(res?.dataList[0]);
+        setData(res?.data || []);
       },
     }
   );
@@ -29,9 +31,9 @@ export const Proporties = () => {
       <div className="description center">
         Siz orzu qilgan, siz izlagan shinam va arzon uylar.
       </div>
-      <Total className="description">{data.length}Total</Total>
+      <Total className="description">{data?.length}Total</Total>
       <Wrapper>
-        {data.map((value) => {
+        {data?.map((value) => {
           return <Card key={value.id} info={value} />;
         })}
       </Wrapper>

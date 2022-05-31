@@ -15,6 +15,7 @@ export const Input = ({
   onChange,
   placeholder,
   name,
+  defaultValue,
 }) => {
   return (
     <Wrapper mr={mr} ml={ml} mt={mt} mb={mb}>
@@ -28,6 +29,7 @@ export const Input = ({
         height={height}
         onClick={onClick}
         name={name}
+        defaultValue={defaultValue}
       />
     </Wrapper>
   );
