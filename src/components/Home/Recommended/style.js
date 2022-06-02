@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as arrowright } from "../../assets/icons/arrowright.svg";
-import { ReactComponent as arrowleft } from "../../assets/icons/arrowleft.svg";
+import { ReactComponent as arrowright } from "../../../assets/icons/arrowright.svg";
+import { ReactComponent as arrowleft } from "../../../assets/icons/arrowleft.svg";
 
 const Container = styled.div`
   display: flex;
