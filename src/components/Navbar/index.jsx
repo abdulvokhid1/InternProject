@@ -23,15 +23,17 @@ export const Navbar = () => {
             <Logo_Title>Houzing</Logo_Title>
           </Logo>
           <NavbarBody>
-            {navbar.map(({ title, id, path }) => {
+            {navbar.map(({ title, id, path, hidden }) => {
               return (
-                <Link key={id} to={path}>
-                  {title}
-                </Link>
+                !hidden && (
+                  <Link key={id} to={path}>
+                    {title}
+                  </Link>
+                )
               );
             })}
           </NavbarBody>
-          <Button onClick={() => navigate("/login")} width="120px">
+          <Button onClick={() => navigate("/signin")} width="120px">
             Login
           </Button>
         </NavbarWrapper>

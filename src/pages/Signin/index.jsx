@@ -1,16 +1,18 @@
 import React, { useRef } from "react";
-import { Container } from "./style";
+import { Container, Wrapper } from "./style";
 import Input from "../../components/Generic/Input";
-import Button from "../../components/Generic/Button";
+import { Button } from "../../components/Generic/Button";
 
 export const Generic = () => {
   const emailRef = useRef("");
   const pwRef = useRef("");
   return (
     <Container>
-      <Input ref={emailRef} placeholder="Email" />
-      <Input ref={pwRef} placeholder="password" />
-      <Button>Login</Button>
+      <Wrapper>
+        <Input ref={emailRef} placeholder="Email" />
+        <Input ref={pwRef} placeholder="password" />
+        <Button type="secondary">Login</Button>
+      </Wrapper>
     </Container>
   );
 };
