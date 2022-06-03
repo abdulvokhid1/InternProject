@@ -5,6 +5,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 `;
 const Wrapper = styled.div`
   display: flex;

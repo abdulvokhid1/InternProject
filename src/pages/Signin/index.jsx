@@ -1,17 +1,33 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { Container, Wrapper } from "./style";
 import Input from "../../components/Generic/Input";
 import { Button } from "../../components/Generic/Button";
 
 export const Generic = () => {
-  const emailRef = useRef("");
-  const pwRef = useRef("");
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
+
+  const onSubmit = () => {
+    console.log(email);
+    console.log(pw);
+  };
   return (
     <Container>
+      <div className="title">Signin</div>
       <Wrapper>
-        <Input ref={emailRef} placeholder="Email" />
-        <Input ref={pwRef} placeholder="password" />
-        <Button type="secondary">Login</Button>
+        <Input
+          onChange={({ target }) => setEmail(target?.value)}
+          value={email}
+          placeholder="Email"
+        />
+        <Input
+          onChange={({ target }) => setPw(target?.value)}
+          value={pw}
+          placeholder="password"
+        />
+        <Button onClick={onSubmit} type="secondary">
+          Login
+        </Button>
       </Wrapper>
     </Container>
   );
