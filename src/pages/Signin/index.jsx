@@ -13,17 +13,21 @@ export const Generic = () => {
 
   const navigate = useNavigate();
 
-  const { mutate } = useMutation(
-    () => {
-      fetch(`${url}/public/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password: pw }),
-      }).then((res) => res.json());
-    },
-    {
+  const { mutate } = useMutation((props) => {
+    return fetch(`${url}/public/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password: pw }),
+    }).then((res) => res.json());
+  });
+
+  const onSubmit = () => {
+    console.log(email);
+    console.log(pw);
+
+    mutate("hey", {
       onSuccess: (res) => {
         console.log(res, "res");
         localStorage.setItem("token", res?.authenticationToken);
@@ -33,13 +37,7 @@ export const Generic = () => {
       onError: (res) => {
         console.log(res, "error");
       },
-    }
-  );
-
-  const onSubmit = () => {
-    console.log(email);
-    console.log(pw);
-    mutate();
+    });
   };
   return (
     <Container>
