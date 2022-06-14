@@ -57,5 +57,35 @@ const ArrowRight = styled(arrowright)`
   padding-left: 0;
   padding-right: 10px;
 `;
+const CategoryWrapper = styled.div`
+  display: flex;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(.jpg);
+  /* XXL */
 
-export { Wrapper, Container, Carousel, ArrowLeft, ArrowRight };
+  box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
+    0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  width: 280px;
+  height: 350px;
+  position: relative;
+`;
+const Details = -styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+export {
+  Details,
+  Img,
+  CategoryWrapper,
+  Wrapper,
+  Container,
+  Carousel,
+  ArrowLeft,
+  ArrowRight,
+};
