@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin-top: 32px;
   position: relative;
+  padding: 0 130px;
 `;
 const Carousel = styled.div`
   display: flex;

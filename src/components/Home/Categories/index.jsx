@@ -1,16 +1,37 @@
 import React, { useRef, useState } from "react";
-import Card from "../../Card";
-import { ArrowLeft, ArrowRight, Carousel, Container, Wrapper } from "./style";
+// import Card from "../../Card";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Carousel,
+  CategoryWrapper,
+  Container,
+  Img,
+  Wrapper,
+} from "./style";
 import AliceCarousel from "react-alice-carousel";
 import { useQuery } from "react-query";
+import img1 from "../../../assets/imgs/img1.png";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const Title = ({ title }) => {
-  return <h1>{title}</h1>;
+// const Title = ({ title }) => {
+//   return <h1>{title}</h1>;
+// };
+const Card = () => {
+  return (
+    <CategoryWrapper>
+      <Img src={img1} />
+    </CategoryWrapper>
+  );
 };
-
 export const Category = () => {
+  // const items = [
+  //   <Card mr={20} />,
+  //   <Card mr={20} />,
+  //   <Card mr={20} />,
+  //   <Card mr={20} />,
+  // ];
   const slider = useRef();
 
   const [list, setList] = useState([]);
@@ -28,9 +49,10 @@ export const Category = () => {
       onSuccess: (res) => {
         console.log(res, "res");
         let response = res?.data?.map((value) => (
-          <div style={{ height: "200px", width: "200px" }}>
-            <Title title={value} />
-          </div>
+          <Card key={value.id} title={value} />
+          // <div style={{ height: "200px", width: "200px" }}>
+          //   <Title title={value} />
+          // </div>
         ));
         setList(response || []);
       },
@@ -46,12 +68,12 @@ export const Category = () => {
       <Wrapper>
         <Carousel>
           <AliceCarousel ref={slider} autoWidth items={list} />
-          <ArrowRight onClick={() => slider.current?.sliderPrev()}>
+          {/* <ArrowRight onClick={() => slider.current?.sliderPrev()}>
             &lang;
-          </ArrowRight>
+          </ArrowRight> 
           <ArrowLeft onClick={() => slider.current?.sliderNext()}>
             &lang;
-          </ArrowLeft>
+          </ArrowLeft> */}
         </Carousel>
       </Wrapper>
     </Container>

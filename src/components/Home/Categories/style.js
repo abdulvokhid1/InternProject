@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin-top: 32px;
   position: relative;
+  padding: 0 130px;
 `;
 const Carousel = styled.div`
   display: flex;
@@ -59,8 +60,8 @@ const ArrowRight = styled(arrowright)`
 `;
 const CategoryWrapper = styled.div`
   display: flex;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url(.jpg);
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(.jpg); */
   /* XXL */
 
   box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
@@ -68,16 +69,20 @@ const CategoryWrapper = styled.div`
   border-radius: 3px;
   transform: matrix(-1, 0, 0, 1, 0, 0);
   width: 280px;
+  max-width: 280px;
   height: 350px;
   position: relative;
+  border: 2px solid black;
 `;
 const Details = -styled.div`
   display: flex;
   flex-direction: column;
 `;
 const Img = styled.img`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+  width: 280px;
+  height: 350px;
 `;
 export {
   Details,

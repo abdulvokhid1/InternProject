@@ -52,3 +52,7 @@ body {
 .deleted {
   text-decoration: line-through;
 }
+.alice-carousel__stage {
+  display: flex;
+  gap: 20px;
+}
