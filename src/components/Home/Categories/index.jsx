@@ -10,13 +10,7 @@ const Title = ({ title }) => {
   return <h1>{title}</h1>;
 };
 
-export const Recommend = () => {
-  const items = [
-    <Card mr={20} />,
-    <Card mr={20} />,
-    <Card mr={20} />,
-    <Card mr={20} />,
-  ];
+export const Category = () => {
   const slider = useRef();
 
   const [list, setList] = useState([]);
@@ -63,4 +57,4 @@ export const Recommend = () => {
     </Container>
   );
 };
-export default Recommend;
+export default Category;
