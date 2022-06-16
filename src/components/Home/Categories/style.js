@@ -77,6 +77,16 @@ const CategoryWrapper = styled.div`
 const Details = -styled.div`
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
 `;
 const Img = styled.img`
   /* width: 100%;

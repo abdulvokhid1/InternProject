@@ -6,35 +6,27 @@ import {
   Carousel,
   CategoryWrapper,
   Container,
+  Details,
   Img,
   Wrapper,
 } from "./style";
 import AliceCarousel from "react-alice-carousel";
 import { useQuery } from "react-query";
-import img1 from "../../../assets/imgs/img1.png";
+import img1 from "../../../assets/imgs/uy.png";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-// const Title = ({ title }) => {
-//   return <h1>{title}</h1>;
-// };
-const Card = () => {
+const Category = () => {
   return (
     <CategoryWrapper>
       <Img src={img1} />
+      {/* <Details>{title}</Details> */}
     </CategoryWrapper>
   );
 };
-export const Category = () => {
-  // const items = [
-  //   <Card mr={20} />,
-  //   <Card mr={20} />,
-  //   <Card mr={20} />,
-  //   <Card mr={20} />,
-  // ];
-  const slider = useRef();
-
+export const CategoryComponent = () => {
   const [list, setList] = useState([]);
+  const slider = useRef();
 
   useQuery(
     "",
@@ -49,10 +41,7 @@ export const Category = () => {
       onSuccess: (res) => {
         console.log(res, "res");
         let response = res?.data?.map((value) => (
-          <Card key={value.id} title={value} />
-          // <div style={{ height: "200px", width: "200px" }}>
-          //   <Title title={value} />
-          // </div>
+          <Category key={value.id} title={value} />
         ));
         setList(response || []);
       },
@@ -67,10 +56,10 @@ export const Category = () => {
       </div>
       <Wrapper>
         <Carousel>
-          <AliceCarousel ref={slider} autoWidth items={list} />
-          {/* <ArrowRight onClick={() => slider.current?.sliderPrev()}>
+          {/* <AliceCarousel ref={slider} autoWidth items={list} />
+          <ArrowRight onClick={() => slider.current?.sliderPrev()}>
             &lang;
-          </ArrowRight> 
+          </ArrowRight>
           <ArrowLeft onClick={() => slider.current?.sliderNext()}>
             &lang;
           </ArrowLeft> */}
