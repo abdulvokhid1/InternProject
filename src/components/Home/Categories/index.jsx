@@ -13,18 +13,25 @@ import {
 import AliceCarousel from "react-alice-carousel";
 import { useQuery } from "react-query";
 import uy from "../../../assets/imgs/uy.png";
+import { useNavigate } from "react-router-dom";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const Card = ({ title }) => {
+const Category = ({ title, id }) => {
+  const navigate = useNavigate();
+
+  const GoTo = () => {
+    navigate(`/proporties?category_id=${id}`);
+  };
+
   return (
-    <CategoryWrapper>
+    <CategoryWrapper onClick={GoTo}>
       <Img src={uy} alt="test" />
       <Details>{title}</Details>
     </CategoryWrapper>
   );
 };
-export const Category = () => {
+export const CategoryComponent = () => {
   const slider = useRef();
 
   const [list, setList] = useState([]);
@@ -41,7 +48,9 @@ export const Category = () => {
     {
       onSuccess: (res) => {
         console.log(res, "res");
-        let response = res?.data?.map((value) => <Card title={value} />);
+        let response = res?.data?.map((value, index) => (
+          <Category title={value} id={index + 1} />
+        ));
         setList(response || []);
       },
     }
@@ -67,4 +76,4 @@ export const Category = () => {
     </Container>
   );
 };
-export default Category;
+export default CategoryComponent;

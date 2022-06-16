@@ -69,7 +69,7 @@ const CategoryWrapper = styled.div`
   height: 350px;
   position: relative;
 `;
-const Details = -styled.div`
+const Details = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
