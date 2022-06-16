@@ -12,21 +12,22 @@ import {
 } from "./style";
 import AliceCarousel from "react-alice-carousel";
 import { useQuery } from "react-query";
-import img1 from "../../../assets/imgs/uy.png";
+import uy from "../../../assets/imgs/uy.png";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const Category = () => {
+const Card = ({ title }) => {
   return (
     <CategoryWrapper>
-      <Img src={img1} />
-      {/* <Details>{title}</Details> */}
+      <Img src={uy} alt="test" />
+      <Details>{title}</Details>
     </CategoryWrapper>
   );
 };
-export const CategoryComponent = () => {
-  const [list, setList] = useState([]);
+export const Category = () => {
   const slider = useRef();
+
+  const [list, setList] = useState([]);
 
   useQuery(
     "",
@@ -40,9 +41,7 @@ export const CategoryComponent = () => {
     {
       onSuccess: (res) => {
         console.log(res, "res");
-        let response = res?.data?.map((value) => (
-          <Category key={value.id} title={value} />
-        ));
+        let response = res?.data?.map((value) => <Card title={value} />);
         setList(response || []);
       },
     }
@@ -56,8 +55,8 @@ export const CategoryComponent = () => {
       </div>
       <Wrapper>
         <Carousel>
-          {/* <AliceCarousel ref={slider} autoWidth items={list} />
-          <ArrowRight onClick={() => slider.current?.sliderPrev()}>
+          <AliceCarousel ref={slider} autoWidth items={list} />
+          {/* <ArrowRight onClick={() => slider.current?.sliderPrev()}>
             &lang;
           </ArrowRight>
           <ArrowLeft onClick={() => slider.current?.sliderNext()}>

@@ -60,10 +60,6 @@ const ArrowRight = styled(arrowright)`
 `;
 const CategoryWrapper = styled.div`
   display: flex;
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url(.jpg); */
-  /* XXL */
-
   box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
     0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
   border-radius: 3px;
@@ -72,7 +68,6 @@ const CategoryWrapper = styled.div`
   max-width: 280px;
   height: 350px;
   position: relative;
-  border: 2px solid black;
 `;
 const Details = -styled.div`
   display: flex;
