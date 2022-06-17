@@ -52,11 +52,8 @@ export const Home = () => {
         <Input placeholder={"Max price"} />
       </Section>
       <Section>
-        <Button width={"131px"} type={"secondary"}>
-          Cancel
-        </Button>
-        <Button width={"131px"} type={"primary"}>
-          Search
+        <Button width={"131px"} type={"primary"} onClick={onClear}>
+          Clear
         </Button>
       </Section>
     </Advanced>

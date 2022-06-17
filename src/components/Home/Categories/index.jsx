@@ -20,12 +20,12 @@ const { REACT_APP_BASE_URL: url } = process.env;
 const Category = ({ title, id }) => {
   const navigate = useNavigate();
 
-  const GoTo = () => {
-    navigate(`/proporties?category_id=${id}`);
+  const goto = () => {
+    navigate(`/properties?category_id=${id}`);
   };
 
   return (
-    <CategoryWrapper onClick={GoTo}>
+    <CategoryWrapper onClick={goto}>
       <Img src={uy} alt="test" />
       <Details>{title}</Details>
     </CategoryWrapper>
