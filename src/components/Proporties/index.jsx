@@ -15,7 +15,7 @@ export const Proporties = () => {
   useQuery(
     ["get data", search],
     () => {
-      return fetch(`${url}/v1/houses/list${search}`).then((res) => res.json());
+      return fetch(`${url}/v1/houses/list`).then((res) => res.json());
     },
     {
       onSuccess: (res) => {

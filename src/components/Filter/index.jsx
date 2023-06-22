@@ -52,7 +52,7 @@ export const Home = () => {
         <Input placeholder={"Max price"} />
       </Section>
       <Section>
-        <Button width={"131px"} type={"primary"} onClick={onClear}>
+        <Button width={"131px"} type={"primary"} onClick={() => {}}>
           Clear
         </Button>
       </Section>
